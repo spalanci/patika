@@ -1,0 +1,63 @@
+## Proje 3: Binary Search Tree (BST)
+
+**Dizi:** [7, 5, 1, 8, 3, 6, 0, 9, 4, 2]
+
+### Aşamalar:
+
+**1. Root (Kök):** 7
+
+**2. 5** → 7'den küçük, sola gider.  
+→ 7'nin soluna 5 yazılır.
+
+**3. 1** → 7'den küçük, sola. 5'ten küçük, sola.  
+→ 5'in soluna 1 yazılır.
+
+**4. 8** → 7'den büyük, sağa.  
+→ 7'nin sağına 8 yazılır.
+
+**5. 3** → 7'den küçük → sola. 5'ten küçük → sola. 1'den büyük → sağa.  
+→ 1'in sağına 3 yazılır.
+
+**6. 6** → 7'den küçük → sola. 5'ten büyük → sağa.  
+→ 5'in sağına 6 yazılır.
+
+**7. 0** → 7 → sol, 5 → sol, 1 → sol (1'den küçük).  
+→ 1'in soluna 0 yazılır.
+
+**8. 9** → 7 → sağ, 8 → sağ.  
+→ 8'in sağına 9 yazılır.
+
+**9. 4** → 7 → sol, 5 → sol, 1 → sağ (3'e gider), 3'ten büyük → sağ.  
+→ 3'ün sağına 4 yazılır.
+
+**10. 2** → 7 → sol, 5 → sol, 1 → sağ (3'e gider), 3'ten küçük → sol.  
+→ 3'ün soluna 2 yazılır.
+
+---
+
+### BST Yapısı (yazılı gösterim):
+
+```
+        7
+       / \
+      5   8
+     / \   \
+    1   6   9
+   / \
+  0   3
+     / \
+    2   4
+```
+
+### Açıklamalı adımlar:
+
+- **Root:** 7
+- **5** → 7'nin solunda
+- **1** → 5'in solunda
+- **8** → 7'nin sağında
+- **3** → 1'in sağında
+- **6** → 5'in sağında
+- **0** → 1'in solunda
+- **9** → 8'in sağında
+- **4** → 3'ün sağında
+- **2** → 3'ün solunda
