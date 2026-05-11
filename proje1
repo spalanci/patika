@@ -1,0 +1,39 @@
+## Proje 1: Insertion Sort
+
+**Dizi:** [22, 27, 16, 2, 18, 6]
+
+### Aşamalar:
+1. [22, 27, 16, 2, 18, 6]  
+2. [22, 27, 16, 2, 18, 6] (22 ve 27 karşılaştırıldı, değişmez)  
+3. [16, 22, 27, 2, 18, 6] (16, 22 ve 27’den küçük, sola kayar)  
+4. [2, 16, 22, 27, 18, 6] (2, tüm elemanlardan küçük, başa gelir)  
+5. [2, 16, 18, 22, 27, 6] (18, 22 ve 27’den küçük, 16’dan büyük)  
+6. [2, 6, 16, 18, 22, 27] (6, 2’den büyük, diğerlerinden küçük, 2’nin yanına yerleşir)
+
+### Big-O Gösterimi:
+- **Worst case:** O(n²)  
+- **Average case:** O(n²)  
+- **Best case:** O(n)  
+
+### Time Complexity – 18 Sayısı:
+Sıralı dizi: [2, 6, 16, 18, 22, 27]  
+18 sayısı dizinin ortalarında olduğu için **Average case** kapsamına girer.
+
+---
+
+## Proje 2: Selection Sort – İlk 4 Adım
+
+**Dizi:** [7, 3, 5, 8, 2, 9, 4, 15, 6]
+
+### Adımlar:
+1. En küçük eleman 2 ile baştaki 7 yer değiştirir.  
+   → [2, 3, 5, 8, 7, 9, 4, 15, 6]  
+
+2. Kalan kısımda en küçük 3 (zaten yerinde).  
+   → [2, 3, 5, 8, 7, 9, 4, 15, 6]  
+
+3. Kalan kısımda en küçük 4 ile 5 yer değiştirir.  
+   → [2, 3, 4, 8, 7, 9, 5, 15, 6]  
+
+4. Kalan kısımda en küçük 5 ile 8 yer değiştirir.  
+   → [2, 3, 4, 5, 7, 9, 8, 15, 6]
