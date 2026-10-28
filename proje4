@@ -1,0 +1,47 @@
+1. Listeyi Düzleştiren (Flatten) Fonksiyon
+python
+def flatten(lst):
+    result = []
+    for item in lst:
+        if isinstance(item, list):
+            result.extend(flatten(item))
+        else:
+            result.append(item)
+    return result
+
+
+# Test
+input_list = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+print(flatten(input_list))
+# Çıktı: [1, 'a', 'cat', 2, 3, 'dog', 4, 5]
+Mantık: Her elemanı geziyoruz. Eğer eleman bir liste ise, özyinelemeli (recursive) olarak flatten fonksiyonunu tekrar çağırıp sonucu extend ile ekliyoruz. Değilse doğrudan append ediyoruz.
+
+2. İç İçe Listeleri Tersine Döndüren Fonksiyon
+python
+
+def reverse_nested(lst):
+    result = []
+    for item in reversed(lst):
+        if isinstance(item, list):
+            result.append(reverse_nested(item))
+        else:
+            result.append(item)
+    return result
+
+
+# Test
+input_list = [[1, 2], [3, 4], [5, 6, 7]]
+print(reverse_nested(input_list))
+# Çıktı: [[7, 6, 5], [4, 3], [2, 1]]
+Mantık:
+
+reversed(lst) ile listenin elemanlarını sondan başa doğru geziyoruz (böylece dış seviye tersine dönüyor).
+
+Her eleman için: eğer eleman bir liste ise, özyinelemeli olarak reverse_nested çağırıp iç listeyi de tersine çeviriyoruz; değilse olduğu gibi ekliyoruz.
+
+Örnek akış: [[1,2],[3,4],[5,6,7]] → reversed ile [5,6,7], [3,4], [1,2] sırasıyla işlenir → her biri kendi içinde ters çevrilir → [[7,6,5],[4,3],[2,1]].
+
+Kısa Alternatif (2. soru için tek satır)
+python
+reverse_nested = lambda l: [reverse_nested(i) if isinstance(i, list) else i for i in reversed(l)]
+Her iki fonksiyon da keyfi derinlikte iç içe listelerle çalışır.
